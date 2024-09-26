@@ -1,5 +1,3 @@
-
-
 COPY INTO ETF(fund_symbol,
 				quote_type,
 				region,
@@ -143,6 +141,6 @@ COPY INTO ETF(fund_symbol,
 				fund_treynor_ratio_10years
 			) 
 FROM @ETF_STAGE/ETFs.csv
-FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = ',
-' SKIP_HEADER = 1 ,
+FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = ',' 
+SKIP_HEADER = 1 ,
  FIELD_OPTIONALLY_ENCLOSED_BY = '"');
