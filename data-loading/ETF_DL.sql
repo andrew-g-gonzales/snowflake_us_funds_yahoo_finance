@@ -144,3 +144,20 @@ FROM @ETF_STAGE/ETFs.csv
 FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = ',' 
 SKIP_HEADER = 1 ,
  FIELD_OPTIONALLY_ENCLOSED_BY = '"');
+
+
+
+ COPY INTO ETF_PRICE(
+				fund_symbol,
+				price_date,
+				open,
+				high,
+				low,
+				close,
+				adj_close,
+				volume
+			) 
+FROM @ETF_PRICE_STAGE/ETF_prices.csv 
+FILE_FORMAT = (TYPE = CSV FIELD_DELIMITER = ',' 
+SKIP_HEADER = 1 ,
+ FIELD_OPTIONALLY_ENCLOSED_BY = '"');
